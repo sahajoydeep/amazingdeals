@@ -66,7 +66,13 @@ function Product() {
       image: "image8.jpg",
       buyLink: "https://amzn.to/4fTcW5r",
     },
-
+   {
+      //product 9///
+      name: "Royal Export Women's Silk Blend Yoke Design Solid Straight Kurta Pant with Dupatta",
+      description: "Kurta Color- Teal Blue, Pant Color- Teal Blue, Dupatta Color- Teal Blue",
+      image: "image9.jpg",
+      buyLink: "https://amzn.to/4ieMzZk",
+    },
   ]
 
   return (
