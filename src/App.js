@@ -7,7 +7,7 @@ function App (){
     <div>
       <header>
         <nav className="navbar">
-          <h1>Amazon India Deals</h1>
+          <h1>Amazing Deals India</h1>
           <ul className="nav-links">
             <li>
               <a href="#recommended">Recommended</a>
