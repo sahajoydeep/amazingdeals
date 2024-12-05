@@ -71,8 +71,32 @@ function Product() {
       name: "Royal Export Women's Silk Blend Yoke Design Solid Straight Kurta Pant with Dupatta",
       description: "Kurta Color- Teal Blue, Pant Color- Teal Blue, Dupatta Color- Teal Blue",
       image: "image9.jpg",
+      buyLink: "https://amzn.to/3OJ1jC8",
+    },
+   {
+      //product 10///
+      name: "Royal Export Women's Chanderi Ethnic Motifs Embroidered Straight Kurta Pant with Dupatta",
+      description: "Kurta Color- Teal Blue, Pant Color- Teal Blue, Dupatta Color- Teal Blue",
+      image: "image10.jpg",
       buyLink: "https://amzn.to/4ieMzZk",
     },
+
+       {
+      //product 11///
+      name: "ABSO ESSENTIALS Barrier Repair Moisturizer | Lightweight",
+      description: "Intensive Hydration: Enriched with nourishing ingredients, this moisturiser deeply hydrates and restores the skin's natural moisture barrier.",
+      image: "image11.jpg",
+      buyLink: "https://amzn.to/49kpbWt",
+    },
+
+       {
+      //product 12///
+      name: "Naturow Extra Virgin Avocado Oil | Cold Pressed",
+      description: "❇️ DELICIOUS AND VERSATILE: With a high smoke point, Naturow’s Avocado oil can be used for high heat cooking, Frying, Baking, Homemade Sauces, Dressings and Marinades.",
+      image: "image12.jpg",
+      buyLink: "https://amzn.to/3VoQ1ab",
+    },
+    
   ]
 
   return (
