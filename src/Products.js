@@ -56,7 +56,7 @@ function Product() {
       name: "TEKCOOL Wall Clock 12 Silent Quartz Decorative Latest Wall Clock Non-Ticking",
       description: "🕘 Non-ticking Wall Clock--- Built-in quiet sweep continuous-movement second-hand, wall clock ensures a silent sleeping or working environment.",
       image: "image7.jpg",
-      buyLink: "https://amzn.to/3Zxnthb",
+      buyLink: "https://amzn.to/4fbFdTQ",
     },
 
     {
