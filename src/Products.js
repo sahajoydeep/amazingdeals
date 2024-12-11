@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 
 function Product() {
-  // Define the function before usage
   const calculateTimeLeft = (expiryTime) => {
     const difference = expiryTime - Date.now();
     if (difference <= 0) {
@@ -16,15 +15,13 @@ function Product() {
   };
 
   const initialProducts = [
-    {
-      //product 1///
+    {      //product 1///
       name: "TEKCOOL Hot Water Bag",
-      description: "High quality guaranteed rubber hot bag, leak-proof, colorful, easy to clean, and keeps water hot for a long time.",
+      description:
+        "High quality guaranteed rubber hot bag, leak-proof, colorful, easy to clean, and keeps water hot for a long time.",
       image: "image1.jpg",
       buyLink: "https://amzn.to/3Zv8ggo",
-      expiryTime: Date.now() + 43200, // Example: 2 hours from now
-
-
+      expiryTime: Date.now() + 14 * 60 * 60 * 1000, // 14 hours
     },
     {
       //product 2///
@@ -108,7 +105,7 @@ function Product() {
       description: "Kurta Color- Teal Blue, Pant Color- Teal Blue, Dupatta Color- Teal Blue",
       image: "image10.jpg",
       buyLink: "https://amzn.to/4ieMzZk",
-      expiryTime: Date.now() + 43200000, // Example: 2 hours from now
+      expiryTime: Date.now() + 14 * 60 * 60 * 1000, // Example: 2 hours from now
 
     },
 
@@ -133,17 +130,28 @@ function Product() {
     },
     
   ]
-
-  const [products] = useState(initialProducts);
+  const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [timeLeft, setTimeLeft] = useState(
-    initialProducts.map((product) => calculateTimeLeft(product.expiryTime))
-  );
+  const [timeLeft, setTimeLeft] = useState([]);
 
+  // Initialize products from localStorage or fallback to initial products
+  useEffect(() => {
+    const savedProducts = JSON.parse(localStorage.getItem("products"));
+    if (savedProducts) {
+      setProducts(savedProducts);
+    } else {
+      localStorage.setItem("products", JSON.stringify(initialProducts));
+      setProducts(initialProducts);
+    }
+  }, []);
+
+  // Update time left for each product
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prevTimeLeft) =>
-        products.map((product) => calculateTimeLeft(product.expiryTime))
+      setTimeLeft(
+        products.map((product) =>
+          calculateTimeLeft(product.expiryTime)
+        )
       );
     }, 1000);
 
@@ -164,7 +172,8 @@ function Product() {
             <p>{product.description}</p>
             {timeLeft[index] ? (
               <div className="countdown">
-                Time Left: {timeLeft[index].hours}h {timeLeft[index].minutes}m {timeLeft[index].seconds}s
+                Time Left: {timeLeft[index].hours}h {timeLeft[index].minutes}m{" "}
+                {timeLeft[index].seconds}s
               </div>
             ) : (
               <div className="expired">Expired Deal</div>
